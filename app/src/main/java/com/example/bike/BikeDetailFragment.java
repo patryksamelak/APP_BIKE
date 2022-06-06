@@ -10,6 +10,14 @@ public class BikeDetailFragment extends Fragment {
     private long bikeId;
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (savedInstanceState != null) {
+            bikeId = savedInstanceState.getLong("bikeId");
+        }
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedinstanceState) {
         return inflater.inflate(R.layout.fragment_bike_detail, container, false);
     }
@@ -30,5 +38,11 @@ public class BikeDetailFragment extends Fragment {
             description.setText(bike.getRecipe());
         }
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putLong("bikeId", bikeId);
+    }
+
 
 }
