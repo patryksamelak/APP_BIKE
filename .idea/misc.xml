@@ -4,7 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Prywatne pliki/Studia/SEMESTR 6/Aplikacje mobilne/Laby/Bike/app/src/main/res/layout-large/activity_main.xml" value="0.21721311475409835" />
+        <entry key="..\:/Prywatne pliki/Studia/SEMESTR 6/Aplikacje mobilne/Laby/Bike/app/src/main/res/layout/activity_temp.xml" value="0.2828125" />
         <entry key="..\:/Prywatne pliki/Studia/SEMESTR 6/Aplikacje mobilne/Laby/Bike/app/src/main/res/layout/fragment_bike_list.xml" value="0.2515625" />
+        <entry key="..\:/Prywatne pliki/Studia/SEMESTR 6/Aplikacje mobilne/Laby/Bike/app/src/main/res/layout/fragment_jogging_detail.xml" value="0.1" />
+        <entry key="..\:/Prywatne pliki/Studia/SEMESTR 6/Aplikacje mobilne/Laby/Bike/app/src/main/res/layout/fragment_jogging_detail2.xml" value="0.2828125" />
+        <entry key="..\:/Prywatne pliki/Studia/SEMESTR 6/Aplikacje mobilne/Laby/Bike/app/src/main/res/layout/fragment_stoper.xml" value="0.26875" />
       </map>
     </option>
   </component>

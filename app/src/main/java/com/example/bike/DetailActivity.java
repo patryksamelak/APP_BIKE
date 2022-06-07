@@ -12,7 +12,7 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         BikeDetailFragment frag = (BikeDetailFragment)
-            getSupportFragmentManager().findFragmentById(R.id.detail_frag);
+                getSupportFragmentManager().findFragmentById(R.id.detail_frag);
         int bikeId = (int) getIntent().getExtras().get(EXTRA_BIKE_ID);
         frag.setBike(bikeId);
     }
