@@ -65,7 +65,6 @@ public class StoperFragment extends Fragment implements View.OnClickListener{
             running = true;
         }
     }
-
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         savedInstanceState.putInt("seconds", seconds);
