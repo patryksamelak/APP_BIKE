@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/MotywAplikacji">
         <activity
+            android:name=".ActionActivity"
+            android:label="@string/action_activity_title" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
