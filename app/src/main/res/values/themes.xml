@@ -7,10 +7,22 @@
         <item name="colorAccent">@color/teal_200</item>
         <!-- Customize your theme here. -->
     </style>
+
     <style name="Theme.Bike.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
     <style name="Theme.Bike.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
     <style name="Theme.Bike.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="MotywAplikacji.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="MotywAplikacji.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="MotywAplikacji.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
