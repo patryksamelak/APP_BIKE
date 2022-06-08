@@ -31,9 +31,6 @@ public class BikeListFragment extends ListFragment {
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
-
-
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);

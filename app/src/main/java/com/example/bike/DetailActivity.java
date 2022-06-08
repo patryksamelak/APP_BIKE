@@ -1,9 +1,11 @@
 package com.example.bike;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,84 +21,108 @@ public class DetailActivity extends AppCompatActivity {
         final Boolean[] isAllFabsVisible = new Boolean[1];
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_launcher);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+
         BikeDetailFragment frag = (BikeDetailFragment)
                 getSupportFragmentManager().findFragmentById(R.id.detail_frag);
         int bikeId = (int) getIntent().getExtras().get(EXTRA_BIKE_ID);
         frag.setBike(bikeId);
 
-        FloatingActionButton mAddFab, mAddAlarmFab, mAddPersonFab, mAddPersonFab2;
+        FloatingActionButton mAddFab, mPlayStoper, mPauseStoper, mResetSaveStoper, mStatistics;
+        TextView addPlayActionText, addPauseActionText, addResetSaveActionText, addStatisticsActionText;
+        mAddFab = findViewById(R.id.add_fab);
+        // FAB button
+        mPlayStoper = findViewById(R.id.add_play_fab);
+        mPauseStoper = findViewById(R.id.add_pause_fab);
+        mResetSaveStoper = findViewById(R.id.add_resetsave_fab);
+        mStatistics = findViewById(R.id.add_statistics_fab);
 
-        TextView addAlarmActionText, addPersonActionText, addPersonActionText2;
+        addPlayActionText = findViewById(R.id.add_play_action_text);
+        addPauseActionText = findViewById(R.id.add_pause_action_text);
+        addResetSaveActionText = findViewById(R.id.add_resetsave_action_text);
+        addStatisticsActionText = findViewById(R.id.add_statistics_action_text);
 
-            mAddFab = findViewById(R.id.add_fab);
-            // FAB button
-            mAddAlarmFab = findViewById(R.id.add_alarm_fab);
-            mAddPersonFab = findViewById(R.id.add_person_fab);
-            mAddPersonFab2 = findViewById(R.id.add_person_fab2);
+        mPlayStoper.setVisibility(View.GONE);
+        mPauseStoper.setVisibility(View.GONE);
+        mResetSaveStoper.setVisibility(View.GONE);
+        mStatistics.setVisibility(View.GONE);
+        addPlayActionText.setVisibility(View.GONE);
+        addPauseActionText.setVisibility(View.GONE);
+        addResetSaveActionText.setVisibility(View.GONE);
+        addStatisticsActionText.setVisibility(View.GONE);
 
-            addAlarmActionText = findViewById(R.id.add_alarm_action_text);
-            addPersonActionText = findViewById(R.id.add_person_action_text);
-            addPersonActionText2 = findViewById(R.id.add_person_action_text2);
+        isAllFabsVisible[0] = false;
 
-            mAddAlarmFab.setVisibility(View.GONE);
-            mAddPersonFab.setVisibility(View.GONE);
-            mAddPersonFab2.setVisibility(View.GONE);
-            addAlarmActionText.setVisibility(View.GONE);
-            addPersonActionText.setVisibility(View.GONE);
-            addPersonActionText2.setVisibility(View.GONE);
+        mAddFab.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (!isAllFabsVisible[0]) {
+                            mPlayStoper.show();
+                            mPauseStoper.show();
+                            mResetSaveStoper.show();
+                            mStatistics.show();
+                            addPlayActionText.setVisibility(View.VISIBLE);
+                            addPauseActionText.setVisibility(View.VISIBLE);
+                            addResetSaveActionText.setVisibility(View.VISIBLE);
+                            addStatisticsActionText.setVisibility(View.VISIBLE);
+                            isAllFabsVisible[0] = true;
+                        } else {
 
-            isAllFabsVisible[0] = false;
-
-            mAddFab.setOnClickListener(
-                    new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            if (!isAllFabsVisible[0]) {
-                                mAddAlarmFab.show();
-                                mAddPersonFab.show();
-                                mAddPersonFab2.show();
-                                addAlarmActionText.setVisibility(View.VISIBLE);
-                                addPersonActionText.setVisibility(View.VISIBLE);
-                                addPersonActionText2.setVisibility(View.VISIBLE);
-
-                                isAllFabsVisible[0] = true;
-                            } else {
-
-                                mAddAlarmFab.hide();
-                                mAddPersonFab.hide();
-                                mAddPersonFab2.hide();
-                                addAlarmActionText.setVisibility(View.GONE);
-                                addPersonActionText.setVisibility(View.GONE);
-                                addPersonActionText2.setVisibility(View.GONE);
-
-                                isAllFabsVisible[0] = false;
-                            }
+                            mPlayStoper.hide();
+                            mPauseStoper.hide();
+                            mResetSaveStoper.hide();
+                            mStatistics.hide();
+                            addPlayActionText.setVisibility(View.GONE);
+                            addPauseActionText.setVisibility(View.GONE);
+                            addResetSaveActionText.setVisibility(View.GONE);
+                            addStatisticsActionText.setVisibility(View.GONE);
+                            isAllFabsVisible[0] = false;
                         }
-                    });
+                    }
+                });
 
-            mAddPersonFab.setOnClickListener(
-                    new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            StoperFragment.onClickStop();
-                        }
-                    });
+        mPauseStoper.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        StoperFragment.onClickStop();
+                    }
+                });
 
+        mPlayStoper.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        StoperFragment.onClickStart();
+                    }
+                });
 
-            mAddAlarmFab.setOnClickListener(
-                    new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            StoperFragment.onClickStart();
-                        }
-                    });
-
-            mAddPersonFab2.setOnClickListener(
+        mResetSaveStoper.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         StoperFragment.onClickReset();
                     }
                 });
-        }
+
+        mStatistics.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(DetailActivity.this, StatisticsActivity.class);
+                        startActivity(intent);
+                    }
+                });
     }
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+}

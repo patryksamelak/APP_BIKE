@@ -18,11 +18,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!--Floating action button for add alarm-->
-    <!--Make sure that you are constraining this
-        button to the parent button-->
+
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/add_alarm_fab"
+        android:id="@+id/add_play_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="90dp"
@@ -36,11 +34,8 @@
         app:layout_constraintStart_toStartOf="@+id/add_fab"
         app:srcCompat="@drawable/play" />
 
-    <!--Action name text for the add alarm button-->
-    <!--Make sure that you are constraining this Text to
-        the add Alarm FAB button-->
     <TextView
-        android:id="@+id/add_alarm_action_text"
+        android:id="@+id/add_play_action_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="90dp"
@@ -48,15 +43,16 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:text="Start"
-        app:layout_constraintBottom_toBottomOf="@+id/add_alarm_fab"
-        app:layout_constraintEnd_toStartOf="@+id/add_alarm_fab"
-        app:layout_constraintTop_toTopOf="@+id/add_alarm_fab" />
+        app:layout_constraintBottom_toBottomOf="@+id/add_play_fab"
+        app:layout_constraintEnd_toStartOf="@+id/add_play_fab"
+        app:layout_constraintTop_toTopOf="@+id/add_play_fab" />
+
 
     <!--Floating action button for add person-->
     <!--Make sure that you are constraining this
         button to the add Alarm FAB button-->
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/add_person_fab"
+        android:id="@+id/add_pause_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:fabSize="normal"
@@ -65,16 +61,16 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        app:layout_constraintBottom_toTopOf="@+id/add_alarm_fab"
-        app:layout_constraintEnd_toEndOf="@+id/add_alarm_fab"
-        app:layout_constraintStart_toStartOf="@+id/add_alarm_fab"
+        app:layout_constraintBottom_toTopOf="@+id/add_play_fab"
+        app:layout_constraintEnd_toEndOf="@+id/add_play_fab"
+        app:layout_constraintStart_toStartOf="@+id/add_play_fab"
         app:srcCompat="@drawable/pause" />
 
     <!--Action name text for the add person button-->
     <!--Make sure that you are constraining this Text
         to the add Person FAB button-->
     <TextView
-        android:id="@+id/add_person_action_text"
+        android:id="@+id/add_pause_action_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="90dp"
@@ -82,15 +78,15 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:text="Pauza"
-        app:layout_constraintBottom_toBottomOf="@+id/add_person_fab"
-        app:layout_constraintEnd_toStartOf="@+id/add_person_fab"
-        app:layout_constraintTop_toTopOf="@+id/add_person_fab" />
+        app:layout_constraintBottom_toBottomOf="@+id/add_pause_fab"
+        app:layout_constraintEnd_toStartOf="@+id/add_pause_fab"
+        app:layout_constraintTop_toTopOf="@+id/add_pause_fab" />
 
     <!--Floating action button for add person-->
     <!--Make sure that you are constraining this
         button to the add Alarm FAB button-->
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/add_person_fab2"
+        android:id="@+id/add_resetsave_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:fabSize="normal"
@@ -99,16 +95,16 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        app:layout_constraintBottom_toTopOf="@+id/add_alarm_fab"
-        app:layout_constraintEnd_toEndOf="@+id/add_alarm_fab"
-        app:layout_constraintStart_toStartOf="@+id/add_alarm_fab"
+        app:layout_constraintBottom_toTopOf="@+id/add_play_fab"
+        app:layout_constraintEnd_toEndOf="@+id/add_play_fab"
+        app:layout_constraintStart_toStartOf="@+id/add_play_fab"
         app:srcCompat="@drawable/reset" />
 
     <!--Action name text for the add person button-->
     <!--Make sure that you are constraining this Text
         to the add Person FAB button-->
     <TextView
-        android:id="@+id/add_person_action_text2"
+        android:id="@+id/add_resetsave_action_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="90dp"
@@ -116,14 +112,49 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:text="Zapisz i Reset"
-        app:layout_constraintBottom_toBottomOf="@+id/add_person_fab"
-        app:layout_constraintEnd_toStartOf="@+id/add_person_fab"
-        app:layout_constraintTop_toTopOf="@+id/add_person_fab" />
+        app:layout_constraintBottom_toBottomOf="@+id/add_pause_fab"
+        app:layout_constraintEnd_toStartOf="@+id/add_pause_fab"
+        app:layout_constraintTop_toTopOf="@+id/add_pause_fab" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_statistics_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabSize="normal"
+        android:layout_marginBottom="300dp"
+        android:layout_marginRight="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        app:layout_constraintBottom_toTopOf="@+id/add_play_fab"
+        app:layout_constraintEnd_toEndOf="@+id/add_play_fab"
+        app:layout_constraintStart_toStartOf="@+id/add_play_fab"
+        app:srcCompat="@drawable/statistics" />
+
+    <!--Action name text for the add person button-->
+    <!--Make sure that you are constraining this Text
+        to the add Person FAB button-->
+    <TextView
+        android:id="@+id/add_statistics_action_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="90dp"
+        android:layout_marginBottom="320dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:text="Statystyki"
+        app:layout_constraintBottom_toBottomOf="@+id/add_pause_fab"
+        app:layout_constraintEnd_toStartOf="@+id/add_pause_fab"
+        app:layout_constraintTop_toTopOf="@+id/add_pause_fab" />
+
+
+
 
     <include
         layout="@layout/toolbar_main"
         android:id="@+id/toolbar"
         />
+
 
 
     <fragment

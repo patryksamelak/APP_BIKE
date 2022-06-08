@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements BikeListFragment.
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        toolbar.setNavigationIcon(R.drawable.ic_launcher);
     }
 
     @Override
@@ -38,6 +38,9 @@ public class MainActivity extends AppCompatActivity implements BikeListFragment.
             startActivity(intent);
         }
     }
+
+
+
 
 
 
