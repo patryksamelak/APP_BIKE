@@ -1,5 +1,4 @@
 package com.example.bike;
-import java.util.Locale;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -10,8 +9,11 @@ import android.widget.TextView;
 import android.widget.Button;
 
 public class StoperFragment extends Fragment implements View.OnClickListener{
-    private int seconds = 0;
-    private boolean running;
+
+    private static boolean running;
+    private static int seconds = 0;
+
+
     private boolean wasRunning;
 
     @Override
@@ -33,6 +35,7 @@ public class StoperFragment extends Fragment implements View.OnClickListener{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (savedInstanceState != null) {
+
             seconds = savedInstanceState.getInt("seconds");
             running = savedInstanceState.getBoolean("running");
             wasRunning = savedInstanceState.getBoolean("wasRunning");
@@ -43,12 +46,6 @@ public class StoperFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle SavedInstanceState) {
         View layout = inflater.inflate(R.layout.fragment_stoper, container, false);
         runStoper(layout);
-        Button startButton = (Button)layout.findViewById(R.id.start_button);
-        startButton.setOnClickListener(this);
-        Button stopButton = (Button)layout.findViewById(R.id.stop_button);
-        stopButton.setOnClickListener(this);
-        Button resetButton = (Button)layout.findViewById(R.id.reset_button);
-        resetButton.setOnClickListener(this);
         return layout;
     }
 
@@ -72,13 +69,14 @@ public class StoperFragment extends Fragment implements View.OnClickListener{
         savedInstanceState.putBoolean("wasRunning", wasRunning);
     }
 
-    private void onClickStart() {
+    public static void onClickStart() {
         running = true;
     }
-    private void onClickStop() {
+
+    public static void onClickStop() {
         running = false;
     }
-    private void onClickReset() {
+    public static void onClickReset() {
         running = false;
         seconds = 0;
     }
