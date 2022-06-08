@@ -1,5 +1,7 @@
 package com.example.bike;
 import android.content.Intent;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +14,8 @@ import android.content.Intent;
 import android.support.design.widget.TabLayout;
 
 public class MainActivity extends AppCompatActivity implements BikeListFragment.Listener {
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +23,12 @@ public class MainActivity extends AppCompatActivity implements BikeListFragment.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_launcher);
+
+
     }
+
+
+
 
     @Override
     public void itemClicked(long id) {
@@ -38,11 +47,5 @@ public class MainActivity extends AppCompatActivity implements BikeListFragment.
             startActivity(intent);
         }
     }
-
-
-
-
-
-
 }
 

@@ -1,12 +1,51 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:floatingActionButtonLocation="http://schemas.android.com/tools">
 
-    <include
-        layout="@layout/toolbar_main"
-        android:id="@+id/toolbar"
-        />
+    <android.support.design.widget.AppBarLayout
+        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" >
+        <android.support.design.widget.CollapsingToolbarLayout
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:contentScrim="?attr/colorPrimary"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image01"
+                app:layout_collapseMode="parallax" />
+            <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:background="@color/green"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                android:layout_weight="1"
+                android:navigationIcon="@drawable/back"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:layout_collapseMode="pin"
+                android:id="@+id/toolbar"/>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
 
-</RelativeLayout>
+    <android.support.v4.widget.NestedScrollView
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/text1"
+            android:text="TUTAJ TRZEBA DODAC STATYSTYKI"
+            android:background="#34f5d6"/>
+
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout >
