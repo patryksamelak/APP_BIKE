@@ -44,6 +44,18 @@ public class BikeDetailFragment extends Fragment {
             title.setText(bike.getName());
             TextView description = (TextView) view.findViewById(R.id.textDescription);
             description.setText(bike.getRecipe());
+            TextView dlugosckm = (TextView) view.findViewById(R.id.textDlugoscKM);
+            dlugosckm.setText(bike.getDlugoscKM());
+            TextView trudnosc = (TextView) view.findViewById(R.id.textTrudnosc);
+            trudnosc.setText(bike.getTrudnosc());
+            TextView nalepszy_czas = (TextView) view.findViewById(R.id.textNajlepszyCzas);
+            nalepszy_czas.setText(bike.getNajlepszyCzas());
+            TextView ostatni_czas = (TextView) view.findViewById(R.id.textOstatniCzas);
+            ostatni_czas.setText(bike.getOstatniCzas());
+            TextView nalepszy_czas_data = (TextView) view.findViewById(R.id.textNajlepszyCzasData);
+            nalepszy_czas_data.setText(bike.getNajlepszyCzasData());
+            TextView ostatni_czas_data = (TextView) view.findViewById(R.id.textOstatniCzasData);
+            ostatni_czas_data.setText(bike.getOstatniCzasData());
         }
     }
 
